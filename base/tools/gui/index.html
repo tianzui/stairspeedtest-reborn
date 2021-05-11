@@ -24,7 +24,7 @@
           <el-card>
             <div slot="header">机场云 测速☁️</div>
             <el-container :element-loading-text="loadingContent">
-              <el-form label-width="120px">
+              <el-form label-width="120px" label-position="right">
                 <el-row>
                   <el-form-item label="模式设置：" v-show="false">
                     <el-radio-group v-model="option" :disabled="loading">
@@ -76,9 +76,7 @@
                       @keyup.enter.native="submit"
                       :disabled="loading"
                     ></el-input>
-                    <span style="color: #606266; margin-left: 15p;"></span>
-                      提示：选择下方对应的带宽，组名只写机场名，会自动拼接，例如填写后浪云，提交时会自动变成后浪云|福建联通1000M</span
-                    >
+
                     <!-- <el-button
                       type="primary"
                       @click="submit"
@@ -92,6 +90,11 @@
                     <el-button type="danger" @click="terminate" icon="el-icon-close" v-if="!option" :disabled="!loading"
                       >终 止</el-button
                     > -->
+                  </el-form-item>
+                  <el-form-item label="提示：">
+                    <span style="color: #606266; margin-left: 15p">
+                      选择下方对应的带宽，组名只写机场名，会自动拼接，例如填写后浪云，提交时会自动变成后浪云|福建联通1000M
+                    </span>
                   </el-form-item>
 
                   <el-form-item label="本地带宽：" v-if="option" :disabled="loading">
@@ -334,7 +337,7 @@
               let arr = this.groupname.split("|");
               this.groupname = arr[0];
             }
-            this.groupname += `|${this.network}`;
+            this.groupname += ` | ${this.network}`;
             this.loading = true;
             this.loadingContent = "等待后端响应……";
             this.starttest();
@@ -640,7 +643,7 @@
           },
           goTelegram() {
             window.open("https://t.me/yunspeedtest", "_blank");
-          }
+          },
         },
       });
     </script>
