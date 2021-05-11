@@ -146,7 +146,7 @@
                     <el-button type="danger" @click="terminate" icon="el-icon-close" :disabled="!loading"
                       >终 止</el-button
                     >
-                    <el-button type="info" icon="el-icon-s-promotion">频 道</el-button>
+                    <el-button type="info" @click="goTelegram" icon="el-icon-s-promotion">频 道</el-button>
                   </el-form-item>
                 </el-row>
               </el-form>
@@ -638,6 +638,9 @@
           speedSort: function (obj1, obj2) {
             return this.getSpeed(obj1.speed) - this.getSpeed(obj2.speed);
           },
+          goTelegram() {
+            window.open("https://t.me/yunspeedtest", "_blank");
+          }
         },
       });
     </script>
