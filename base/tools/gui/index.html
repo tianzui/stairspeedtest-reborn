@@ -15,10 +15,25 @@
     [v-cloak] {
       display: none;
     }
+    .el-card {
+      background: 0 0 !important;
+    }
+    .el-card__header {
+      color: white;
+    }
+    .el-card__body {
+      background: rgba(255, 255, 255, 0.5);
+    }
+    .el-form-item__label {
+      color: #2c3e50;
+    }
+    .el-input__inner {
+      color: #2c3e50;
+    }
   </style>
 
-  <body>
-    <div id="app" v-cloak>
+  <body style="background-image: linear-gradient(to right, #209cff 0%, #68e0cf 100%)">
+    <div id="app" v-cloak style="padding: 20px">
       <el-row>
         <el-col :span="22" :offset="1">
           <el-card>
@@ -63,7 +78,7 @@
                         @click="cancelFileUpload"
                         >取消文件选择</el-button
                       >
-                      <div class="el-upload__text" v-if="!subscription.length">
+                      <div class="el-upload__text" style="color: #2c3e50" v-if="!subscription.length">
                         还可以将配置文件拖到此处，或<em>点击上传</em>
                       </div>
                     </el-upload>
@@ -92,7 +107,7 @@
                     > -->
                   </el-form-item>
                   <el-form-item label="提示：">
-                    <span style="color: #606266; margin-left: 15p">
+                    <span style="color: #2c3e50; margin-left: 15p">
                       选择下方对应的带宽，组名只写机场名，会自动拼接，例如填写后浪云，提交时会自动变成后浪云|福建联通1000M
                     </span>
                   </el-form-item>
