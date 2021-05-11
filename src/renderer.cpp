@@ -441,7 +441,7 @@ std::string exportRender(std::string resultpath, std::vector<nodeInfo> &nodes, b
     if(export_as_ssrspeed)
     {
         traffic += "Time used: " + secondToString(test_duration) + ". Online Node(s) : [" + std::to_string(onlines) + "/" + std::to_string(node_count) + "]";
-        title = "  SSRSpeed Result Table ( v2.7.2 )  ";
+        title = "  SSRSpeed Result Table ( v2.7.2 )By 机场云  ";
     }
     else
     {
