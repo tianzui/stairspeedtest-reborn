@@ -15,7 +15,6 @@ using namespace std::chrono;
 
 std::string export_sort_method_render = "none";
 bool export_as_ssrspeed = false;
-
 std::vector<color> colorgroup;
 std::vector<int> bounds;
 
@@ -30,6 +29,10 @@ const int def_bounds[5] = {0, 64 * 1024, 512 * 1024, 4 * 1024 * 1024, 16 * 1024 
 //rainbow color
 const int rainbow_colorgroup[8][3] = {{65535, 65535, 65535}, {26112, 65535, 26112}, {65535, 65535, 26112}, {65535, 45568, 26112}, {65535, 26112, 26112}, {57856, 35840, 65535}, {26112, 52224, 65535}, {26112, 26112, 65535}};
 const int rainbow_bounds[8] = {0, 64 * 1024, 512 * 1024, 4 * 1024 * 1024, 16 * 1024 * 1024, 24 * 1024 * 1024, 32 * 1024 * 1024, 40 * 1024 * 1024};
+
+// custom1 color
+const int custom1_colorgroup[7][3] = {{65535,65535,65535},{02048,52480,64000},{10240,55296,58624},{15872,57344,54528},{21504,59392,50688},{26880,61440,47104},{36352,64768,55808}};
+const int custom1_bounds[7] = {0, 64 * 1024, 512 * 1024, 4 * 1024 * 1024, 16 * 1024 * 1024, 24 * 1024 * 1024, 32 * 1024 * 1024};
 
 int calcLength(const std::string &data)
 {
@@ -267,6 +270,16 @@ void loadDefaultColor(std::string type)
         {
             colorgroup.push_back(arrayToColor(rainbow_colorgroup[i]));
             bounds.push_back(rainbow_bounds[i]);
+        }
+    }
+    else if(type == "custom1") 
+    {
+        eraseElements(colorgroup);
+        eraseElements(bounds);
+        for(int i = 0; i < 8; i++)
+        {
+            colorgroup.push_back(arrayToColor(custom1_colorgroup[i]));
+            bounds.push_back(custom1_bounds[i]);
         }
     }
     else if(type == "original")
