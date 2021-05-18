@@ -86,10 +86,11 @@
                   <el-form-item label="自定义组名：">
                     <el-input
                       v-model="groupname"
-                      style="width: 215px"
+                      style="width: 230px"
                       size="small"
                       @keyup.enter.native="submit"
                       :disabled="loading"
+                      clearable
                     ></el-input>
 
                     <!-- <el-button
@@ -352,9 +353,9 @@
             }
             if (this.groupname.indexOf("|") >= 0) {
               let arr = this.groupname.split("|");
-              this.groupname = arr[0];
+              this.groupname = arr[1].trim();
             }
-            this.groupname += ` | ${this.network}`;
+            this.groupname = `机场云 | ${this.groupname} | ${this.network}`;
             this.loading = true;
             this.loadingContent = "等待后端响应……";
             this.starttest();
