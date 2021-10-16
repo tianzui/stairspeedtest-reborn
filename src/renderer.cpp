@@ -292,7 +292,7 @@ std::string exportRender(std::string resultpath, std::vector<nodeInfo> &nodes, b
     loadDefaultColor(export_color_style);
 
     //predefined values
-    std::string font = "tools" PATH_SLASH "misc" PATH_SLASH "SourceHanSansCN-Medium.otf";
+    std::string font = "tools" PATH_SLASH "misc" PATH_SLASH "PingFang2.ttf";
 
     int fontsize = 12, text_x_offset = 5, height_line = 24, text_y_offset = 7;
     double border_red = 0.8, border_green = 0.8, border_blue = 0.8;
@@ -312,7 +312,7 @@ std::string exportRender(std::string resultpath, std::vector<nodeInfo> &nodes, b
     if(export_as_ssrspeed)
     {
         export_as_new_style = true;
-        font = "tools" PATH_SLASH "misc" PATH_SLASH "SourceHanSansCN-Medium.otf";
+        font = "tools" PATH_SLASH "misc" PATH_SLASH "PingFang2.ttf";
         fontsize = 13;
         height_line = 30;
         text_y_offset = 7;
@@ -603,7 +603,7 @@ std::string exportRender(std::string resultpath, vector<nodeInfo> nodes, bool ex
     loadDefaultColor(export_color_style);
 
     //predefined values
-    const std::string font = "tools" PATH_SLASH "misc" PATH_SLASH "SourceHanSansCN-Medium.otf";
+    const std::string font = "tools" PATH_SLASH "misc" PATH_SLASH "PingFang2.ttf";
     const int height_line = 24, fontsize = 12, text_x_offset = 5, text_y_offset = 7, center_align_offset = 8, vertical_delim_align_offset = 2;
     const double border_red = 0.8, border_green = 0.8, border_blue = 0.8;
     const double text_red = 0.0, text_green = 0.0, text_blue = 0.0;
